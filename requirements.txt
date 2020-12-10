@@ -1,0 +1,6 @@
+pandas
+gensim 
+numpy
+jsonify
+flask
+joblib
