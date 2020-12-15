@@ -49,3 +49,9 @@ def phrase(sen):
   
     return str(list_result)
 
+def isWordInSentence(sen, phrase):
+    s = sentence.split(" ")
+    for i in s:
+        if (i == word):
+            return True
+    return False
