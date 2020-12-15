@@ -3,25 +3,18 @@ pipeline{
   stages {
     stage('Build Flask app'){
       steps{
-        sh 'docker build -t myflaskapp .'
+        sh 'docker build -t docker-flask:latest .'
       }
     }
     stage('Run docker images'){
       parallel{
-        
         stage('Run Flask App'){
           steps{
-            sh 'docker run -d -p 5000:5000 --name myflaskapp_c myflaskapp'
+            sh 'docker run -p 5000:5000 docker-flask:latest'
           }
         }
       }
     }
    
-    stage('Docker images down'){
-      steps{
-        sh 'docker rm -f myflaskapp_c'
-        sh 'docker rmi -f myflaskapp'
-      }
-    }
   }
 }
