@@ -17,7 +17,7 @@ class FlaskTests(unittest.TestCase):
     def test_phrase(self):
 
         for check in self.sen_check:
-            print(self.assertEqual(tweet.isWordInSentence(check[0],tweet.phrase(check[0])), check[1]))
+            self.assertEqual(tweet.isWordInSentence(check[0],tweet.phrase(check[0])), check[1])
             
             
 if __name__ == 'main':
