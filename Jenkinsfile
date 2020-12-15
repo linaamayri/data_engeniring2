@@ -12,6 +12,13 @@ pipeline {
         sh 'docker run -p 5000:5000 docker-flask:latest'
       }
     }
+    
+    stage('stop docker container') {
+      steps {
+        sh 'docker rm -f $(docker container ls -qa)'
+
+      }
+    }
 
   }
 }
